@@ -1,0 +1,12 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="message-show">
+    <h2><%= @post.title %></h2>
+    <p class="message-posted-by"><%= time_ago_in_words(@post.created_at) %></p>
+  </div>
+  <p class="message-desc">
+    <%= @post.content %>
+  </p>
+  <div class="links btn-group">
+    <%= link_to "Back", root_path, class: "btn btn-default" %>
+  </div>
+</div>
