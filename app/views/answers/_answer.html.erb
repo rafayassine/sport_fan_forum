@@ -1,4 +1,11 @@
 <div class="comment">
   <p class="comment-content"><%= answer.content %></p>
   <p class="comment-posted-by">By: <%= answer.user.email %> <%= time_ago_in_words(answer.created_at) %></p>
+
+  <div class="links">
+    <% if current_user.id == answer.user_id %>
+      <%= link_to "Edit Reply", edit_post_answer_path(answer.post, answer) %>
+      <%= link_to "Delete Reply", post_answer_path(answer.post, answer), method: :delete, data: { confirm: "Are you sure ?"} %>
+    <% end %>
+  </div>
 </div>
